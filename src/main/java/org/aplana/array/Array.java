@@ -8,14 +8,15 @@ public class Array {
         List<Integer> list = new ArrayList<>();
         while (list.size() < 20) {
             int n = getRNumMinMax(-10, 10);
+            if(n == 0) continue;
             if(!list.contains(n)) {
                 list.add(n);
             }
         }
         int[] arr = list.stream().mapToInt(i -> i).toArray();
-        Arrays.stream(arr).forEach(System.out::print);
+        System.out.println(Arrays.toString(arr));
         System.out.println("\n");
-        Arrays.stream(replaceAB(arr)).forEach(System.out::print);
+        System.out.println(Arrays.toString(replaceAB(arr)));
     }
 
     public static int[] replaceAB(int[] arr) {
